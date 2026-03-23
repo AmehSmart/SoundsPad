@@ -19,8 +19,10 @@ export default function Pad(props) {
  */
     const [on, setOn] = React.useState(props.on)
 
-    function tiggle(){
+    function toggle(){
         setOn(preOn => ! preOn)
+        // calling the parent function 
+        props.toggle()
     }
 
     return (
@@ -28,7 +30,8 @@ export default function Pad(props) {
             style={{backgroundColor: props.color}}
             // checking the state of the color of the btn
             className={on ? "on" : undefined}
-            onClick={tiggle}
+           
+            onClick={toggle}
         ></button>
     )
 }
